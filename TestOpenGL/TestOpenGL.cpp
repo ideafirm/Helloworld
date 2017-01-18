@@ -5,6 +5,14 @@
 #include "stdafx.h"  
 #include "GL/glut.h"  
 #include "GL/gl.h"  
+
+void myDisplay2(void)
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	glRectf(-1.0f, -1.0f, 1.0f, 1.0f);
+	glFlush();
+}
+
 void  display()
 {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -53,14 +61,22 @@ void init(void)
 //}  
 int main(int argc, char** argv)
 {
-	//todo：第一个画矩形
+	//todo:测试	 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
 	glutInitWindowPosition(100, 100);
 	glutInitWindowSize(400, 400);
 	glutCreateWindow("第一个OpenGL程序");
-	glutDisplayFunc(&display);
+	glutDisplayFunc(&myDisplay2);
 	glutMainLoop();
+	//todo：第一个画矩形
+	//glutInit(&argc, argv);
+	//glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
+	//glutInitWindowPosition(100, 100);
+	//glutInitWindowSize(400, 400);
+	//glutCreateWindow("第一个OpenGL程序");
+	//glutDisplayFunc(&display);
+	//glutMainLoop();
 	//todo:第二个画直线
 	//glutInit(&argc, argv);
 	/*glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
@@ -69,7 +85,7 @@ int main(int argc, char** argv)
 	glutCreateWindow("OpenGL");
 	init();
 	glutDisplayFunc(&myDisplay);*/
-	glutMainLoop();
+	//glutMainLoop();
 
 	return 0;
 }
